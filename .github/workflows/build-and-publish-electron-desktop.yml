@@ -3,7 +3,7 @@ name: electron desktop
 on:
   push:
 #    looks like it works as OR instead of AND
-#    branches: [ master, testnet ]
+    branches: [ master, testnet ]
     tags: [ 'v*.*.*' ]
 env:
   RELEASE_NAME_master: ""
@@ -51,8 +51,8 @@ jobs:
       - run: cp .env.master .env
 
       - name: Build
-#        run: npm run electron:build
-        run: npm run electron:build-x86
+        run: npm run electron:build
+#        run: npm run electron:build-x86
 
       - name: Release
         uses: softprops/action-gh-release@v0.1.5
